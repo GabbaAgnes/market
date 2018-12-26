@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang=“en”>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="http://code.jquery.com/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+    <script src="./javascript/script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet">
+</head>
+  <body>
+  {{#if user}}
+	  
+
+  <nav>
+       <ul class="topnav">
+      <li><a class="active" href="../purchase">Purchase</a></li>
+      <li><a href="../request">Request</a></li>
+      <li><a href="../profile">{{user.username}}</a></li>
+      <li id="logout"><a href="../logout">Logout Here</a></li>
+       </ul>
+     </nav>
+    {{else}}
+    <button onclick="document.getElementById('id01').style.display='block'" id="enter">ENTER</button>
+	{{/if}}
+	
+
+
+     
+
+
+
+    {{{body}}}
+  </body>
+
+
+  <style>
+nav {
+  font-size: 28px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  width:80%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  
+   background:yellowgreen;
+}
+
+.active {
+  background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+

@@ -1,0 +1,71 @@
+
+<div class="sign">
+	<span class="sign__word">help</span>
+	<span class="sign__word">me</span>
+	<span class="sign__word">establish</span>
+  <span class="sign__word">the</span>
+  <span class="sign__word">website</span>
+</div>
+
+<div id="id01" class="modal">
+  <div class="modal-content animate">
+    <div class="w3-container">
+
+  
+</div>
+
+
+    <div class="w3-bar w3-black">
+            <button class="w3-bar-item w3-button" onclick="openCity('London')">Register</button>
+            <button class="w3-bar-item w3-button" onclick="openCity('Paris')">Login</button>
+           
+            </div>
+
+            <div id="London" class="w3-container city">
+            <h2>Register</h2>
+            <form role="form" action="/register" method="post" style="max-width: 300px;">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Enter Username" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password" class="form-control">
+        </div>
+        <button type="submit" class="botton">Submit</button>&nbsp;
+        <a href="/">
+            <button type="button">Cancel</button>
+        </a>
+    </form>
+            </div>
+
+            <div id="Paris" class="w3-container city" style="display:none">
+            <h2>Login</h2>
+           <form role="form" action="/login" method="post" style="max-width: 300px;">
+        <div class="form-group">
+            <input type="text" name="username" placeholder="Enter Username" class="form-control">
+        </div>
+        <div class="form-group">
+            <input type="password" name="password" placeholder="Password" class="form-control">
+        </div>
+        <button type="submit" class="botton">Submit</button>&nbsp;
+        <a href="/">
+            <button type="button">Cancel</button>
+        </a>
+    </form>
+            </div>
+     </div>  
+  
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+
+

@@ -1,0 +1,42 @@
+account=[{
+   email,
+   password,
+   budget:{
+       toiletpaper:X rolls,
+       leaves: x leaves,
+       ...
+   },
+   needs:{
+       legs:1,
+       arms:2
+   },
+      
+
+}]
+
+products=[{
+   legs: 
+monster legs— Bipedalism:{
+    price:
+    size:
+    amount:
+    description:
+    image:
+
+}
+monster feet—feet
+mechanical legs—mechanical legs
+mechanical lower body(with pelvis)—mechanical legs
+claw legs—Anthropod
+
+arms: 
+ wings, 
+mechanical arms,
+monster arms, 
+monster claws—Anthropod
+monster hands
+
+
+}]
+
+

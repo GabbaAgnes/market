@@ -1,0 +1,77 @@
+<h1>“What has always made the state a hell on earth 
+  has been precisely that<br> man has tried to make it heaven.” <br><br>--Friedrich Hölderlin </h1>
+<style>
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  color: white;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 10px 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+</style>
+</head>
+<body>
+
+<h1></h1>
+{{#each allProducts}}
+<div class="responsive">
+  <div class="gallery">
+    <a target="_blank" href="/detail/{{this._id}}">
+     <img src="images/{{this.imageSource}}" width="600" height="400"/>
+    </a>
+    <div class="desc">
+    
+    {{this.name}}<br>
+    {{this.kind}}<br>
+    {{this.price}} </div>
+    </div>
+</div>
+{{/each}}
+
+
+
+
+
