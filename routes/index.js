@@ -12,6 +12,10 @@ router.get('/', (req, res) => {
     res.render('index', { user : req.user });
 });
 
+router.get('/glitchy', (req, res) => {
+    res.render('glitchy', { user : req.user });
+});
+
 router.get('/register', (req, res) => {
     res.render('register', { });
 });
