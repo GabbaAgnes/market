@@ -89,25 +89,51 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
-router.get('/detail/:id', (req, res) => {
-    Product.findById(req.params.id).then((productsFromDatabase)=> {
+router.get('/detail/:creatureid', (req, res) => {
+    Product.findById(req.params.creatureid).then((productsFromDatabase)=> {
         console.log(productsFromDatabase,"good");
         console.log(productsFromDatabase.images,"good");
         console.log(productsFromDatabase.name,"good");
             res.render('details', { 
                 user : req.user, 
                 error : req.flash('error'), 
-                id:req.params.id,
+                id:req.params.creatureid,
                 imagename:"batwing", 
                 name:productsFromDatabase.name,
-               images:productsFromDatabase.images 
-               // [
-                //    "batwing1.png","batwing2.png","batwing3.png"
-              //  ]
+                images:productsFromDatabase.images,
+                stories: productsFromDatabase.stories
              });
     })
 });
 
+/*User.findOne({username: oldUsername}, function (err, user) {
+    user.username = newUser.username;
+    user.password = newUser.password;
+    user.rights = newUser.rights;
+
+    user.save(function (err) {
+        if(err) {
+            console.error('ERROR!');
+        }
+    });
+});*/
+
+router.post("/detail/:creatureid",(req, res) =>{
+    console.log("insubmitForm", req.user, req.body, req.params, req.query);
+    Product.findOne({_id:req.params.creatureid}, function (err, creature){
+        let story= req.body; 
+        story.owner= req.user._id;
+     
+      creature.stories.push(story)
+      creature.save(function (err) {
+        if(err) {
+            console.error('ERROR!', err);
+        }
+        res.redirect("back")
+      });
+    });
+   
+}); 
 
 router.get('/request',isLoggedIn, (req, res) => {
     res.render('request', { user : req.user, error : req.flash('error')});
