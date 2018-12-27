@@ -152,3 +152,11 @@ function isLoggedIn(req, res, next) {
 
     res.redirect('/');
 }
+
+
+var cloudinary = require('cloudinary');
+cloudinary.config({ 
+    cloud_name: 'sample', 
+    api_key: '295617178425996', 
+    api_secret: 'hAtM97Ebeysvl1zCuRBL-DgBb4k' 
+  });
