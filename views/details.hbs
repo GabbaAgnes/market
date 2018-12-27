@@ -32,10 +32,31 @@
 
 <button onclick="myFunction()">Try it</button>
 
+<!--
+
+<form action="/signup" method="POST" enctype="multipart/form-data">
+
+<label>Username</label>
+<input type="text" name="username">
+
+<label>Password</label>
+<input type="text" name="password">
+
+<label>Profile Picture</label>
+<input type="file" name="the-profile-pic">
+
+
+<button>Submit</button>
+</form>-->
 
 <section id="myDIV" >
-   <form action="" method="post">
+   <form action="" method="post" enctype="multipart/form-data">
 <div class="container">
+
+  <label>Profile Picture</label>
+  <input type="file" name="the-profile-pic">
+
+
     <div class="row">
       <div class="col-25">
         <label for="story">Let the story begin...</label>
@@ -187,15 +208,15 @@
 -->
 {{#each stories}}
 <div class="storyLayout">
-  
-  This is the beginning of something great, {{this.title}} {{fullname}} is this beauty you're looking at.<br>
+  <img src={{this.content.image}} />
+  This is the beginning of something great, {{this.content.title}} {{this.content.fullname}} is this beauty you're looking at.<br>
 
-  It's about {{this.size}} big and generally live at {{this.habitate}}.<br>
- They are capable of {{this.ability}} and have the intellectual level of {{this.intellect}}.<br>
-Reproduction is through {{this.reproduction}}. <br>
-Reasons that they have come to this form of being are due to {{this.stress}}.<br>
-  {{this.bodyparts}}<br>
-  Something disturbing to learn as well to be entertained are {{this.disturb}}.
+  It's about {{this.content.size}} big and generally live at {{this.content.habitate}}.<br>
+ They are capable of {{this.content.ability}} and have the intellectual level of {{this.content.intellect}}.<br>
+Reproduction is through {{this.content.reproduction}}. <br>
+Reasons that they have come to this form of being are due to {{this.content.stress}}.<br>
+  {{this.content.bodyparts}}<br>
+  Something disturbing to learn as well to be entertained are {{this.content.disturb}}.
   Perfect.
   
 </div>

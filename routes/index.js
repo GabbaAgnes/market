@@ -2,6 +2,10 @@ const express = require('express');
 const passport = require('passport');
 const Account = require('../models/account');
 const Product = require('../models/product');
+const Story = require('../models/story');
+
+const uploadCloud = require('../config/cloudinary.js');
+
 const router = express.Router();
 
 const fetch = require('node-fetch');
@@ -23,7 +27,7 @@ router.get('/register', (req, res) => {
 
 router.get('/purchase',isLoggedIn, (req, res)=>{
     Product.find().then((productsFromDatabase)=> {
-        console.log(productsFromDatabase);
+        //console.log(productsFromDatabase);
         res.render('purchase', {allProducts:productsFromDatabase, user : req.user});
     });
 
@@ -91,9 +95,10 @@ router.get('/logout', (req, res, next) => {
 
 router.get('/detail/:creatureid', (req, res) => {
     Product.findById(req.params.creatureid).then((productsFromDatabase)=> {
-        console.log(productsFromDatabase,"good");
-        console.log(productsFromDatabase.images,"good");
-        console.log(productsFromDatabase.name,"good");
+       // console.log(productsFromDatabase,"good");
+        //console.log(productsFromDatabase.images,"good");
+        //console.log(productsFromDatabase.name,"good");
+        Story.find({creatureId:req.params.creatureid}).then(stories=>{
             res.render('details', { 
                 user : req.user, 
                 error : req.flash('error'), 
@@ -101,39 +106,49 @@ router.get('/detail/:creatureid', (req, res) => {
                 imagename:"batwing", 
                 name:productsFromDatabase.name,
                 images:productsFromDatabase.images,
-                stories: productsFromDatabase.stories
+                stories: stories
              });
+            })
     })
 });
 
-/*User.findOne({username: oldUsername}, function (err, user) {
-    user.username = newUser.username;
-    user.password = newUser.password;
-    user.rights = newUser.rights;
-
-    user.save(function (err) {
-        if(err) {
-            console.error('ERROR!');
-        }
-    });
-});*/
-
-router.post("/detail/:creatureid",(req, res) =>{
-    console.log("insubmitForm", req.user, req.body, req.params, req.query);
-    Product.findOne({_id:req.params.creatureid}, function (err, creature){
-        let story= req.body; 
-        story.owner= req.user._id;
+// router.post("/detail/:creatureid",   uploadCloud.single("the-profile-pic"), (req, res) =>{
+//     console.log("insubmitForm?", req.body, req.file);
+//     //http://res.cloudinary.com/dfvzao4hk/image/upload/v1545943704/samples/008-SA.JPG.jpg
+//     Product.findOne({_id:req.params.creatureid}, function (err, creature){
+//         let story= req.body; 
+//         story.owner= req.user._id;
      
-      creature.stories.push(story)
-      creature.save(function (err) {
+//       creature.stories.push(story)
+//       creature.save(function (err) {
+//         if(err) {
+//             console.error('ERROR!', err);
+//         }
+//         res.redirect("back")
+//       });
+//     });
+   
+// }); 
+
+
+router.post("/detail/:creatureid",   uploadCloud.single("the-profile-pic"), (req, res) =>{
+    console.log("insubmitForm?", req.body, req.file, 'end');
+    let content = req.body;
+    content.image = req.file.url;
+    let story = new Story({content:content})
+    story.creatureId = req.params.creatureid;
+    story.owner = req.user._id;
+    story.save(function (err) {
         if(err) {
             console.error('ERROR!', err);
         }
         res.redirect("back")
-      });
-    });
+    }) 
+
+    //http://res.cloudinary.com/dfvzao4hk/image/upload/v1545943704/samples/008-SA.JPG.jpg
+
    
-}); 
+});
 
 router.get('/request',isLoggedIn, (req, res) => {
     res.render('request', { user : req.user, error : req.flash('error')});
@@ -152,11 +167,3 @@ function isLoggedIn(req, res, next) {
 
     res.redirect('/');
 }
-
-
-var cloudinary = require('cloudinary');
-cloudinary.config({ 
-    cloud_name: 'sample', 
-    api_key: '295617178425996', 
-    api_secret: 'hAtM97Ebeysvl1zCuRBL-DgBb4k' 
-  });
