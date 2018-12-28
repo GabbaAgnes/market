@@ -1,4 +1,4 @@
-<h1>“What has always made the state a hell on earth 
+<h1 class="shake shake-little shake-constant">“What has always made the state a hell on earth 
   has been precisely that<br> man has tried to make it heaven.” <br><br>--Friedrich Hölderlin </h1>
 <style>
 div.gallery {
@@ -19,6 +19,7 @@ div.desc {
   padding: 15px;
   text-align: center;
   color: white;
+  font-family: 'Rock Salt';
 }
 
 * {
@@ -50,6 +51,26 @@ div.desc {
   clear: both;
 }
 
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  margin: 5% auto;
+  font-family: 'Rock Salt';
+}
+
+/* hover*/
+.responsive figure img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.responsive figure:hover img {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+
 
 </style>
 </head>
@@ -60,13 +81,13 @@ div.desc {
 <div class="responsive">
   <div class="gallery">
     <a target="_blank" href="/detail/{{this._id}}">
-     <img src="images/{{this.imageSource}}" width="600" height="400"/>
+     <figure><img src="images/{{this.imageSource}}" width="600" height="400"/></figure>
     </a>
     <div class="desc">
     
     {{this.name}}<br>
     {{this.kind}}<br>
-    {{this.price}} </div>
+     </div>
     </div>
 </div>
 {{/each}}

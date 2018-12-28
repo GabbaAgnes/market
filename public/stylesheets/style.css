@@ -103,53 +103,9 @@ button:hover {
 }
 
 
-/* neon thing*/
-span {
-  font-family: "Vibur", cursive;
-  font-size: 1rem;
-  background-image: url("https://www.dropbox.com/s/2ct0i6kc61vp0bh/wall.jpg?raw=1");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-color: #141414;
-  
-}
 
 
-.sign {
-  min-height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding-top: 60px;
-}
-.sign__word {
-  font-size: 5.6rem;
-  text-align: center;
-  line-height: 1;
-  color: #c6e2ff;
-  -webkit-animation: neon .08s ease-in-out infinite alternate;
-          animation: neon .08s ease-in-out infinite alternate;
-}
 
-/*Animation Keyframes for neon*/
-@-webkit-keyframes neon {
-  from {
-    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
-  }
-  to {
-    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2;
-  }
-}
-@keyframes neon {
-  from {
-    text-shadow: 0 0 6px rgba(202, 228, 225, 0.92), 0 0 30px rgba(202, 228, 225, 0.34), 0 0 12px rgba(30, 132, 242, 0.52), 0 0 21px rgba(30, 132, 242, 0.92), 0 0 34px rgba(30, 132, 242, 0.78), 0 0 54px rgba(30, 132, 242, 0.92);
-  }
-  to {
-    text-shadow: 0 0 6px rgba(202, 228, 225, 0.98), 0 0 30px rgba(202, 228, 225, 0.42), 0 0 12px rgba(30, 132, 242, 0.58), 0 0 22px rgba(30, 132, 242, 0.84), 0 0 38px rgba(30, 132, 242, 0.88), 0 0 60px #1e84f2;
-  }
-}
 
 
 /* sign up form*/
@@ -157,6 +113,30 @@ span {
 button.w3-bar-item.w3-button {
     background: #4CAF50;
     color: red;
+    position: relative;
+    left:45%;
 
 }
 
+h2{
+  text-align: center;
+}
+
+button.registerbotton{
+  background: url(https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif);
+  position: relative;
+  left: 70%;
+}
+
+
+input.form-control {
+   color: red;
+   background: url(https://media.giphy.com/media/UYBDCJjwOd9Re/giphy.gif);
+   position: relative;
+   left: 59%;
+}
+
+#logout{
+   float: right;
+
+}

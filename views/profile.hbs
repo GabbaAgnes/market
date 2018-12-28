@@ -1,5 +1,39 @@
 <div class="container">
 	<h1>Profile Page</h1>
 
+	{{#each stories}}
+<div class="storyLayout">
+  <img src={{this.content.image}} />
+  <p class="p"> is the beginning of something great, {{this.content.title}} {{this.content.fullname}} 
+  is this beauty you're looking at.<br>
+
+  It's about {{this.content.size}} big and generally live at {{this.content.habitate}}.<br>
+ They are capable of {{this.content.ability}} and have the intellectual level of {{this.content.intellect}}.<br>
+Reproduction is through {{this.content.reproduction}}. <br>
+Reasons that they have come to this form of being are due to {{this.content.stress}}.<br>
+  {{this.content.bodyparts}}<br>
+  Something disturbing to learn as well to be entertained are {{this.content.disturb}}.
+ </p>
+ <a href="delete/{{this._id}}">delete</a>
+  {{!-- <button data-storyid={{this._id}} class="removestory">Remove</button> --}}
+</div>
+{{/each}}
 	
 </div>
+
+<script>
+/*	$(".removestory").click(function(){
+		window.t = this
+
+
+     let storyid = $(this).data("storyid")
+      console.log(storyid);
+          $.post('/deleteStory', {storyid:storyid}, function(res){
+         console.log(res)
+		})
+	});
+	*/
+
+
+
+</script>

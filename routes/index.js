@@ -38,7 +38,7 @@ router.get('/purchase',isLoggedIn, (req, res)=>{
 router.post('/register', (req, res, next) => {
     Account.register(new Account({ username : req.body.username }), req.body.password, (err, account) => {
         if (err) {
-          return res.render('register', { error : err.message });
+          return res.json({ error : err.message });
         }
 
         passport.authenticate('local')(req, res, () => {
@@ -60,12 +60,25 @@ router.post('/register', (req, res, next) => {
 
 
 router.get('/profile',isLoggedIn, (req, res) => { 
+    Story.find({owner:req.user._id}).then(stories=>{
+        
+        res.render('profile', {
+            user: req.user,
+            stories: stories
+        });      
     
+    });
   
-    res.render('profile', {user: req.user});      
     
 });
 
+router.get('/delete/:id',isLoggedIn, (req, res) => {
+    Story.findByIdAndRemove(req.params.id).then(remove=>{
+
+    
+    res.redirect('/profile')
+  });
+});
 
 
 
@@ -93,7 +106,7 @@ router.get('/logout', (req, res, next) => {
     });
 });
 
-router.get('/detail/:creatureid', (req, res) => {
+router.get('/detail/:creatureid', isLoggedIn, (req, res) => {
     Product.findById(req.params.creatureid).then((productsFromDatabase)=> {
        // console.log(productsFromDatabase,"good");
         //console.log(productsFromDatabase.images,"good");
@@ -131,10 +144,15 @@ router.get('/detail/:creatureid', (req, res) => {
 // }); 
 
 
-router.post("/detail/:creatureid",   uploadCloud.single("the-profile-pic"), (req, res) =>{
+router.post("/detail/:creatureid",  [isLoggedIn, uploadCloud.single("the-profile-pic")], (req, res) =>{
     console.log("insubmitForm?", req.body, req.file, 'end');
     let content = req.body;
-    content.image = req.file.url;
+    if (req.file){
+        content.image = req.file.url;
+    }else{
+        content.image="../images/armbond1.png"
+    }
+    
     let story = new Story({content:content})
     story.creatureId = req.params.creatureid;
     story.owner = req.user._id;
