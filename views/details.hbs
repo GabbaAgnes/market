@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang=“en”>
-<h1>{{id}}</h1>
-{{name}}
+<h1>{{name}}
+</h1>
 
 <link rel="stylesheet" href="../stylesheets/details.css">
 
@@ -9,9 +9,9 @@
 <div class="slideshow-container">
 {{#each images}}
 <div class="mySlides fade">
-  <div class="numbertext">1 / 6</div>
+  <div class="numbertext"></div>
   <img src="/images/{{this}}" style="width:100%">
-  <div class="text">Caption One</div>
+  <div class="text"></div>
 </div>
 {{/each}}
 
@@ -31,165 +31,131 @@
   <span class="dot" onclick="currentSlide(6)"></span>
 </div>
 
+	<section class="social" id="myDIV">
+    <form action="" method="post" enctype="multipart/form-data">
+		<div class="container">
+			
+		
+			<a class="btn" href=""">Stories Begin</a>
+			
+		</div>
+	
 
-<button onclick="myFunction()">Hide the Form</button>
+	<div class="container">
+    <h1 class="project-name">IN YOUR OWN WAY, FILL THESE IN</h1>
+		<div id="timeline">
+			<div class="timeline-item">
+				<div class="timeline-icon">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+<path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999
+	c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499
+	l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822
+	c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345
+	c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
+</svg>
 
-<!--
-
-<form action="/signup" method="POST" enctype="multipart/form-data">
-
-<label>Username</label>
-<input type="text" name="username">
-
-<label>Password</label>
-<input type="text" name="password">
-
-<label>Profile Picture</label>
-<input type="file" name="the-profile-pic">
-
-
-<button>Submit</button>
-</form>-->
-
-<section id="myDIV" >
-   <form action="" method="post" enctype="multipart/form-data">
-<div class="container">
-
-  
-
-
-    <div class="row">
-      <div class="col-25">
-        <label for="story">Let the story begin...</label>
-      </div>
-      <div class="col-75">
-       
-          <fieldset>
-      <legend>Title</legend>
-         <label for="title1">
-              <input type="radio" id="title1" name="title" value="M."> Mister</label>
-           <label for="title2">
-              <input type="radio" id="title2" name="title" value="Ms.">Miss </label>
-            <label for="title3">
-              <input type="radio" id="title3" name="title" value="Mx.">Mx </label>
-      </fieldset>
-      </div>
-    </div>
-  
-   <div class="row">
-      <div class="col-25">
+				</div>
+				<div class="timeline-content">
+					<h2>SET YOUR EXPECTAION</h2>
+					<p>
+					
+        <div class="col-25">
         <label for="fullname">Name</label>
       </div>
       <div class="col-75">
         <input type="text" id="fullname" name="fullname" placeholder="Give it a kick-ass name...">
       </div>
-    </div>
-  <br>
-   <label for="creaturesize">Creature Size</label><br>
+                                                                      <br>                      
+        <label for="creaturesize">Creature Size</label><br>
       <input type="radio" name="size" value="Similar to human" checked> Similar to human
   <input type="radio" name="size" value="Triple human"> Triple human
   <input type="radio" name="size" value="Whale scale"> Whale scale  
-  <input type="radio" name="size" value="other">Other 
-  <input type="text" name="size" placeholder="If other, enter information"/>
-  
-  
-  <br><br>
-   <label for="habitate">Dominant Habitate</label><br>
-      <input type="radio" name="habitate" value="Sea" checked>Sea
-  <input type="radio" name="habitate" value="Land">Land
-  <input type="radio" name="habitate" value="Air"> Air 
-  <input type="radio" name="habitate" value="other">Other 
-  <input type="text" name="habitate" placeholder="If other, enter information"/>
-  
-  <br><br>
+  <input type="radio" name="size" value="">Other 
+  <input type="text" name="size" placeholder="Enter your insight"/>                                                        <br><br>
+   <label for="habitate">Dominant Habitate</label><br>                   <input type="text" name="habitate" placeholder="Where does it live?"/>
+ <br><br>
    <label for="ability">Prominent Abilities</label><br>
-      <input type="radio" name="ability" value="one" checked>one
-  <input type="radio" name="ability" value="two">two
-  <input type="radio" name="ability" value="three"> three 
-  <input type="radio" name="ability" value="other">Other 
-  <input type="text" name="ability" placeholder="If other, enter information"/>
-  
-  <br><br>
-   <label for="intellect">Intellectual Highness</label><br>
-      <input type="radio" name="intellect" value="one" checked>one
-  <input type="radio" name="intellect" value="two">two
-  <input type="radio" name="intellect" value="three"> three 
-  <input type="radio" name="intellect" value="other">Other 
-  <input type="text" name="intellect" placeholder="If other, enter information"/>
-  
-  <br><br>
+                        <textarea name="ability" placeholder="What skills it has that impress you?"></textarea>
+                                                                                           </p>
+          
+					
+        
+				</div>
+			</div>
+
+    
+    
+    
+			<div class="timeline-item">
+				<div class="timeline-icon">
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+<path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999
+	c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499
+	l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822
+	c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345
+	c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
+</svg>
+				</div>
+				<div class="timeline-content right">
+					<h2>IT GETS SENSITIVE</h2>
+					<p>
+						 <label for="intellect">Intellectual Highness</label><br>
+                                   <input type="text" name="intellect" placeholder="WHAT LEVEL?"/>
+                                                                                                <br><br>
    <label for="reproduction">Reproduction</label><br>
-      <input type="radio" name="reproduction" value="Asexual" checked>Asexual
-  
- <select>
-  <option name="reproduction" value="binary fission">Binary fission</option>
-  <option name="reproduction" value="budding">Budding</option>
-  <option name="reproduction" value="Parthenogenesis">Parthenogenesis</option>
-  <option name="reproduction" value="Fragmentation">Fragmentation</option>
-</select>
-   
-  <input type="radio" name="reproduction" value="Sexual" checked>Sexual
-  <select>
-  <option name="reproduction" value="one">one</option>
-  <option name="reproduction" value="two">two</option>
-  <option name="reproduction" value="three">three</option>
-  <option name="reproduction" value="four">four</option>
-</select>
-  <input type="text" name="reproduction" placeholder="If other, enter information"/>
-  
-  
+                            <input type="text" name="reproduction" placeholder="Sexual OR Asexual?"/>
   <br><br>
    <label for="stress">Environmental Stress/Damage</label><br>
-  <input type="radio" name="stress" value="noise" checked>Noise
-  <input type="radio" name="stress" value="crowding">Crowding
-  <input type="radio" name="stress" value="air quality"> Air quality 
-  <input type="radio" name="stress" value="Tornadoes and other natural disasters"> Tornadoes and other natural disasters. 
-  <input type="radio" name="stress" value="War and other manmade disasters"> War and other manmade disasters.
- 
-  <input type="radio" name="stress" value="Light"> Light 
-  <input type="radio" name="stress" value="ultraviolet radiation"> Ultraviolet radiation 
-  <input type="radio" name="stress" value="genetic modification"> genetic modification 
- <input type="radio" name="stress" value="other">Other 
-  <input type="text" name="stress" placeholder="If other, enter information"/>
-  
-  <br><br>
-  <div class="row">
-      <div class="col-25">
-        <label for="bodyparts">Significant Bodyparts</label>
-      </div>
-      <div class="col-75">
-        <input type="text" id="bodyparts" name="bodyparts" placeholder="Part One..">
-        <input type="text" id="bodyparts" name="bodyparts" placeholder="Part Two..">
-        <input type="text" id="bodyparts" name="bodyparts" placeholder="Part Three..">
-      </div>
-    </div>
-  
-  <br>
-  <label>Profile Picture</label>
+                       <textarea type="text" name="stress" placeholder="How it came to looking like this? Is it natural disasters, ultraviolet radiation, genetic modification or war and other manmade disasters?"></textarea>
+					</p>
+					
+				</div>
+			</div>
+
+			<div class="timeline-item">
+				<div class="timeline-icon">
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 width="21px" height="20px" viewBox="0 0 21 20" enable-background="new 0 0 21 20" xml:space="preserve">
+<path fill="#FFFFFF" d="M19.998,6.766l-5.759-0.544c-0.362-0.032-0.676-0.264-0.822-0.61l-2.064-4.999
+	c-0.329-0.825-1.5-0.825-1.83,0L7.476,5.611c-0.132,0.346-0.462,0.578-0.824,0.61L0.894,6.766C0.035,6.848-0.312,7.921,0.333,8.499
+	l4.338,3.811c0.279,0.246,0.395,0.609,0.314,0.975l-1.304,5.345c-0.199,0.842,0.708,1.534,1.468,1.089l4.801-2.822
+	c0.313-0.181,0.695-0.181,1.006,0l4.803,2.822c0.759,0.445,1.666-0.23,1.468-1.089l-1.288-5.345
+	c-0.081-0.365,0.035-0.729,0.313-0.975l4.34-3.811C21.219,7.921,20.855,6.848,19.998,6.766z"/>
+</svg>
+
+				</div>
+				<div class="timeline-content">
+					<h2>Disturbing Facts</h2>
+					<p>
+					You might have seen some bodyparts that disturb you or keep you up at night. 
+                                   <br>  <textarea id="disturb" name="disturb" placeholder="Write the most disturbing things... " ></textarea>
+         <br>
+            <br>
+  <label>Any parts of this creature that reminds you of earthlings? Show a pic that came to your mind.</label>
   <input type="file" name="the-profile-pic">
-  <br>
-    <div class="row">
-      <div class="col-25">
-        <label for="disturb">Disturbing Facts</label>
-      </div>
-      <div class="col-75">
-        <textarea id="disturb" name="disturb" placeholder="Write the most disturbing things that came to your mind..." style="height:200px"></textarea>
-      </div>
-    </div>
+  <br>                                                                                                                      
+					</p>
+          <div class="row">
+      <input type="submit" value="Submit" class="btn">
+    </div>                                 
+					
+				</div>
+			</div>
+		</div>
+	</div>
+  </form> 
 
-    <div class="row">
-      <input type="submit" value="Submit">
-    </div>
-  </div>
-
+  </section>
 
 
 
 
-</form> 
-</section>
-
-
+   
+    
+	
+  
 
 
 
@@ -204,16 +170,17 @@
 
 {{#each stories}}
 <div class="storyLayout">
-  <img src={{this.content.image}} />
-  <p class="p"> is the beginning of something great, {{this.content.title}} {{this.content.fullname}} 
-  is this beauty you're looking at.<br>
+  
+  <p class="p"> {{this.content.fullname}} is this beauty you're looking at.<br>
 
-  It's about {{this.content.size}} big and generally live at {{this.content.habitate}}.<br>
- They are capable of {{this.content.ability}} and have the intellectual level of {{this.content.intellect}}.<br>
-Reproduction is through {{this.content.reproduction}}. <br>
+  It's {{this.content.size}} in scale and it lives at {{this.content.habitate}}.<br>
+ They are capable of {{this.content.ability}} and the intellectual level is: {{this.content.intellect}}.<br>
+Reproduction is {{this.content.reproduction}}. <br>
 Reasons that they have come to this form of being are due to {{this.content.stress}}.<br>
-  {{this.content.bodyparts}}<br>
+ 
   Something disturbing to learn as well to be entertained are {{this.content.disturb}}.
+  Don't you see? <br>
+<img src={{this.content.image}} />
  </p>
  
   
@@ -252,18 +219,6 @@ function showSlides(n) {
   dots[slideIndex-1].className += " active";
 }
 
-
-
-//hide button
-
-function myFunction() {
-  var x = document.getElementById("myDIV");
-  if (x.style.display === "none") {
-    x.style.display = "block";
-  } else {
-    x.style.display = "none";
-  }
-}
 
 
 

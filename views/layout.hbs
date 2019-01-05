@@ -7,9 +7,14 @@
     <script src="http://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
     <script src="./javascript/script.js"></script>
+    <link rel="stylesheet" href="../stylesheets/layout.css">
     <link href="https://fonts.googleapis.com/css?family=Vibur" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
-   
+    <link href="https://fonts.googleapis.com/css?family=Fredericka+the+Great|Mukta|Press+Start+2P" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Berkshire+Swash|Freckle+Face|Hanalei+Fill|Srisakdi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Aladin" rel="stylesheet">
+     <link rel="stylesheet" href="/stylesheets/style.css">
+
 </head>
   <body>
   
@@ -22,7 +27,7 @@
       <li><a class="active" href="../purchase">Creatures</a></li>
       <!--<li><a href="../request">Request</a></li>-->
       <li><a href="../profile">{{user.username}}</a></li>
-      <li id="logout"><a href="../logout">Logout Here</a></li>
+      <li id="logout"><a href="../logout">Logout</a></li>
        </ul>
      </nav>
     {{else}}
@@ -31,49 +36,5 @@
 	
      {{{body}}}
   </body>
- <link rel="stylesheet" href="/stylesheets/style.css">
 
-  <style>
-nav {
-  font-size: 28px;
-}
-
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
-  position: -webkit-sticky; 
-  position: sticky;
-  top: 0;
-  width:80%;
-}
-
-li {
-  float: left;
-}
-
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-li a:hover {
   
-   background:yellowgreen;
-}
-
-.active {
-  background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
-}
-
-@media screen and (max-width: 600px) {
-  ul.topnav li.right, 
-  ul.topnav li {float: none;}
-}
-
-

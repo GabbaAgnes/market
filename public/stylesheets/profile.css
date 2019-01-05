@@ -1,0 +1,28 @@
+*{
+    font-family: 'Press Start 2P', cursive;
+
+    color: rgb(65, 173, 216);
+    
+}
+
+a{
+    color: rgb(65, 173, 216);
+}
+
+
+.storyLayout{
+    
+    background: url(https://media.giphy.com/media/fzk2aXuD9NrCU/giphy.gif);
+    box-shadow: 0 0 5vmin 1vmin #000 inset;
+    box-sizing: border-box;
+    font-family: 'Aladin', cursive;
+  
+    font-size: 30px;
+    height: 100vh;
+    overflow: hidden;
+    padding: 10vmin;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}

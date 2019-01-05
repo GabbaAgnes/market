@@ -1,0 +1,45 @@
+
+nav {
+  font-size: 28px;
+  font-family: 'Rock Salt';
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
+  position: -webkit-sticky; 
+  position: sticky;
+  top: 0;
+  width:80%;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: yellowgreen;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover {
+  
+   background:url(https://media.giphy.com/media/DvyxIpxw9cCuQ/giphy.gif);
+}
+
+.active {
+  background: url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
+}
+
+@media screen and (max-width: 600px) {
+  ul.topnav li.right, 
+  ul.topnav li {float: none;}
+}
+
+

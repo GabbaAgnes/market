@@ -1,0 +1,91 @@
+
+div.gallery {
+  border: 1px solid #ccc;
+}
+
+div.gallery:hover {
+  border: 1px solid #777;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+
+}
+
+div.desc {
+  padding: 15px;
+  text-align: center;
+  color: white;
+  font-family: 'Rock Salt';
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.responsive {
+  padding: 10px 6px;
+  float: left;
+  width: 24.99999%;
+}
+
+@media only screen and (max-width: 700px) {
+  .responsive {
+    width: 49.99999%;
+    margin: 6px 0;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .responsive {
+    width: 100%;
+  }
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+h1 {
+  width: 100%;
+  text-align: center;
+  font-size: 1em;
+  margin: 5% auto;
+  font-family: 'Rock Salt';
+}
+
+/* hover*/
+.responsive figure img {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.responsive figure:hover img {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+
+
+h1.shake.shake-little.shake-constant{
+
+  color: white;
+  
+}
+
+
+
+h1 { 
+	font: bold 170% 'Berkshire Swash', cursive;
+	border-right: .1em solid black;
+	width: 16.5em; 
+	width: 90ch;
+	margin: 2em 1em;
+	white-space: nowrap;
+	overflow: hidden;
+animation: typing 2s steps(21, end),
+	           blink-caret .5s step-end infinite alternate;
+}

@@ -1,25 +1,34 @@
 <div class="container">
-	<h1>Profile Page</h1>
+	<h1>My Stories</h1>
 
 	{{#each stories}}
 <div class="storyLayout">
-  <img src={{this.content.image}} />
-  <p class="p"> is the beginning of something great, {{this.content.title}} {{this.content.fullname}} 
-  is this beauty you're looking at.<br>
+   <p class="p"> {{this.content.fullname}} is this beauty you're looking at.<br>
 
-  It's about {{this.content.size}} big and generally live at {{this.content.habitate}}.<br>
- They are capable of {{this.content.ability}} and have the intellectual level of {{this.content.intellect}}.<br>
-Reproduction is through {{this.content.reproduction}}. <br>
+  It's {{this.content.size}} in scale and it lives at {{this.content.habitate}}.<br>
+ They are capable of {{this.content.ability}} and the intellectual level is: {{this.content.intellect}}.<br>
+Reproduction is {{this.content.reproduction}}. <br>
 Reasons that they have come to this form of being are due to {{this.content.stress}}.<br>
-  {{this.content.bodyparts}}<br>
+ 
   Something disturbing to learn as well to be entertained are {{this.content.disturb}}.
+  Don't you see? <br>
+<img src={{this.content.image}} />
  </p>
  <a href="delete/{{this._id}}">delete</a>
   {{!-- <button data-storyid={{this._id}} class="removestory">Remove</button> --}}
 </div>
 {{/each}}
 	
+
+  
+
+
+
+
+
 </div>
+<link rel="stylesheet" href="../stylesheets/profile.css">
+
 
 <script>
 /*	$(".removestory").click(function(){
