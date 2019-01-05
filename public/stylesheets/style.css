@@ -151,7 +151,7 @@ button.w3-bar-item.w3-button{
   background:  url(https://media.giphy.com/media/U3qYN8S0j3bpK/giphy.gif);
   font-size: 20px;
   font-family: 'Rock Salt';
-
+  outline: none;
 }
 
 
@@ -227,4 +227,14 @@ button.registerbotton:hover:after{
   border:4px solid red;
   width: calc(100% - 10px);
   height: calc(100% + 10px); 
+}
+
+#landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 32vh;
+    font: bold 170% 'Berkshire Swash', cursive;
 }
