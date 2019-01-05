@@ -81,10 +81,7 @@ h1.shake.shake-little.shake-constant{
 h1 { 
 	font: bold 170% 'Berkshire Swash', cursive;
 	border-right: .1em solid black;
-	width: 16.5em; 
-	width: 90ch;
 	margin: 2em 1em;
-	white-space: nowrap;
 	overflow: hidden;
 animation: typing 2s steps(21, end),
 	           blink-caret .5s step-end infinite alternate;
